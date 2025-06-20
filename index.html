@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Gerencia de la Informática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2C3E50; /* Dark professional blue */
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: #3498DB; /* Standard clear blue */
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link:hover {
+            background-color: #2980B9; /* Slightly darker blue on hover */
+            transform: translateY(-2px);
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+        .unit-section h2 {
+            font-size: 2em;
+            color: #2C3E50; /* Matching header blue for headings */
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .unit-section h3 {
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .section-divider {
+            border-top: 2px solid #e0e0e0;
+            margin: 20px 0;
+        }
+        .file-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: #34C69D; /* A complementary greenish-blue */
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .file-link:hover {
+            background-color: #2ECC71; /* Darker shade on hover */
+        }
+        .file-link svg {
+            margin-right: 8px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            margin-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+        /* Styles for the "Scroll to Top" button */
+        #scrollToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #3498DB; /* Matching navigation link blue */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #2980B9; /* Darker background on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-link {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+            .nav-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header h1 {
+                font-size: 2.5em;
+            }
+            .header p {
+                font-size: 0.9em;
+            }
+            .unit-section h2 {
+                font-size: 1.8em;
+            }
+            .unit-section h3 {
+                font-size: 1.3em;
+            }
+            .card {
+                padding: 15px;
+            }
+            .file-link {
+                font-size: 0.9em;
+                padding: 6px 10px;
+            }
+            #scrollToTopBtn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-link {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .header p {
+                font-size: 0.8em;
+            }
+            .unit-section h2 {
+                font-size: 1.5em;
+            }
+            .unit-section h3 {
+                font-size: 1.2em;
+            }
+            .card {
+                padding: 10px;
+            }
+            .file-link {
+                font-size: 0.8em;
+                padding: 5px 8px;
+            }
+            #scrollToTopBtn {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="text-4xl font-bold">Portafolio de Gerencia de la Informática</h1>
+            <p class="mt-2 text-lg">Manuel Hernández</p>
+            <p class="mt-1 text-md">Universidad Nacional Experimental de la Fuerza Armada (UNEFA)</p>
+            <p class="mt-1 text-md">Ingeniería de Sistemas - Gerencia de la Informática</p>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="mb-8 p-4 bg-white rounded-lg shadow-md flex justify-center space-x-6 nav-bar">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#unidad2" class="nav-link">Unidad 1</a>
+            <a href="#unidad1" class="nav-link">Unidad 2</a>
+            <a href="#unidad3" class="nav-link">Unidad 3</a>
+            <a href="#bibliografia-general" class="nav-link">Bibliografía General</a>
+        </nav>
+
+        <!-- Home Page -->
+        <section id="inicio" class="card">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Bienvenido al Portafolio de Gerencia de la Informática</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Este portafolio es una recopilación de los trabajos realizados durante el curso de Gerencia de la Informática en la Universidad Nacional Experimental de la Fuerza Armada (UNEFA). A lo largo de estas unidades, exploraremos la evolución de la informática, los hitos históricos, las funciones gerenciales clave y las tendencias futuras que impactan la gestión tecnológica en las organizaciones modernas.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                El objetivo de este portafolio es demostrar la comprensión de los conceptos fundamentales y la aplicación de principios de gerencia en el ámbito de la tecnología, así como fomentar la reflexión crítica sobre su impacto en el éxito organizacional.
+            </p>
+            <div class="mt-6">
+                <img src="https://placehold.co/800x400/808080/FFFFFF?text=Imagen+de+Bienvenida" alt="Imagen de bienvenida al portafolio" class="rounded-lg shadow-md w-full">
+            </div>
+        </section>
+
+        <!-- Unidad 2 Section (Ahora es la primera unidad en orden de visualización) -->
+        <section id="unidad2" class="card unit-section">
+            <h2 class="text-3xl font-bold">Unidad 1: Hitos Históricos de la Gerencia Informática y Planificación Estratégica</h2>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Esta unidad se centró en los hitos históricos que han marcado la evolución de la gerencia informática, desde la era de los mainframes hasta la actualidad del cloud computing y DevOps. Se analizó cómo cada etapa tecnológica ha influido en las necesidades organizacionales y en las estrategias de gestión.
+            </p>
+
+            <h3 class="text-2xl mt-6">Resumen Breve</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La gerencia informática ha pasado por varias transformaciones clave:
+                <ul class="list-disc pl-5">
+                    <li>**1950-1960 (Mainframes y gestión centralizada):** Surgimiento de mainframes (ej. IBM 305 RAMAC) y lenguajes como COBOL, centralizando el procesamiento de datos y creando roles especializados.</li>
+                    <li>**1970-1980 (Computadoras personales y descentralización):** Popularización de PCs (Apple II, IBM PC) y MS-DOS, llevando a la distribución del poder informático por departamentos y la necesidad de estándares.</li>
+                    <li>**1990-2000 (Internet y sistemas ERP):** Expansión de Internet y sistemas ERP (ej. SAP R/3), impulsando la integración empresarial, el análisis de datos y la gestión en tiempo real.</li>
+                    <li>**2000-actualidad (Cloud Computing y DevOps):** Lanzamiento de AWS (2006) y adopción de DevOps, transformando la infraestructura y promoviendo la colaboración, escalabilidad y reducción de costos.</li>
+                </ul>
+                La planificación informática se ha vuelto indispensable para alinear la TI con los objetivos del negocio, mitigando riesgos y siguiendo el ciclo de vida de los sistemas.
+            </p>
+
+            <h3 class="text-2xl mt-6">Reflexiones</h3>
+            <p class="text-gray-700 leading-relaxed">
+                Los hitos históricos demuestran que la gerencia informática no es estática, sino que evoluciona en paralelo con los avances tecnológicos y las cambiantes demandas empresariales. Cada era ha presentado sus propios desafíos, desde la estandarización en la descentralización hasta la seguridad en la era de la nube. La capacidad de anticipar y adaptarse a estas transformaciones es lo que define una gerencia informática exitosa. La planificación estratégica, la gestión de riesgos y la mejora continua son elementos constantes a lo largo de todas estas fases.
+            </p>
+
+            <h3 class="text-2xl mt-6">Conclusiones</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La historia de la gerencia informática es una narrativa de adaptación y reinvención. Desde el control centralizado hasta la agilidad y flexibilidad de la nube, la función del gerente de TI ha crecido en complejidad y criticidad. Comprender estos hitos nos permite apreciar la trayectoria y prepararnos mejor para el futuro, donde la integración con el negocio y la innovación constante serán aún más cruciales. La planificación no solo se enfoca en la tecnología actual, sino en la capacidad de la organización para evolucionar con ella.
+            </p>
+
+            <div class="section-divider mt-8"></div>
+
+            <h3 class="text-2xl mt-6">Archivos de la Unidad 1</h3>
+            <div class="flex flex-wrap gap-4 mt-4">
+                <a href="/uploaded/Hitos hist\u00F3ricos de la gerencia inform\u00E1tica.pdf" target="_blank" class="file-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    Presentación: Hitos históricos de la gerencia informática (Hitos históricos de la gerencia informática.pdf)
+                </a>
+                <a href="/uploaded/Ensayo sobre presentaciones de gerencia.pdf" target="_blank" class="file-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    Ensayo: La Gerencia de la Informática: Evolución, Planificación y Estrategia en la Era Digital (Ensayo sobre presentaciones de gerencia.pdf)
+                </a>
+            </div>
+
+            <h3 class="text-2xl mt-6">Bibliografía Específica de la Unidad 1</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Alonso, G. (2005). Gestión de servicios de tecnologías de información. Pearson Educación.</li>
+                <li>Chiavenato, I. (2002). Administración de recursos humanos. McGraw-Hill.</li>
+                <li>Etkin, J. (2005). Gestión de la complejidad en las organizaciones. Ediciones Granica.</li>
+                <li>Fayol, H. (1983). Administración industrial y general. Ediciones Orbis. (Obra original publicada en 1916).</li>
+                <li>Hawryszkiewycz, I. T. (1991). Introduction to systems analysis and design. Prentice Hall.</li>
+                <li>Horovitz, J. (1990). La calidad del servicio: A la conquista del cliente. McGraw-Hill.</li>
+                <li>Juran, J. M. (1990). Juran on quality planning. Free Press.</li>
+                <li>Kendall, K. E. (2005). Análisis y diseño de sistemas (6a ed.). Pearson Educación.</li>
+                <li>Kendall, K. E., & Kendall, J. E. (1991). Análisis y diseño de sistemas. Prentice-Hall Hispanoamericana.</li>
+                <li>Laudon, K. C. (2004). Sistemas de información gerencial: Administración de la empresa digital. Pearson Educación.</li>
+                <li>Lewin, K., & Kelly, D. (1990). Resolving social conflicts and field theory in social science. American Psychological Association.</li>
+                <li>Llorens, F. (2005). Gestión de proyectos informáticos. McGraw-Hill.</li>
+                <li>Meyer, M. H. (1990). Managing technology in a competitive environment. Free Press.</li>
+                <li>Taylor, F. W. (1994). Principios de la administración científica. Ediciones Orbis. (Obra original publicada en 1911).</li>
+                <li>Udaondo, M. (1991). Sistemas de información para la gestión. Pirámide.</li>
+            </ul>
+        </section>
+
+        <!-- Unidad 1 Section (Ahora es la segunda unidad en orden de visualización) -->
+        <section id="unidad1" class="card unit-section">
+            <h2 class="text-3xl font-bold">Unidad 2: La Evolución y Gerencia Estratégica del Área Informática</h2>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                En esta unidad, se analizó la transformación del área de la informática, desde su rol inicial como mero soporte técnico hasta convertirse en un pilar estratégico fundamental para la competitividad organizacional. Se examinaron los modelos organizacionales, las funciones gerenciales y las tendencias que marcan su futuro, destacando la importancia de alinear la tecnología con los objetivos del negocio.
+            </p>
+
+            <h3 class="text-2xl mt-6">Resumen Breve</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La informática ha evolucionado de sistemas centralizados (mainframes) a arquitecturas distribuidas y, más recientemente, a la computación en la nube. Esta transición ha impulsado la necesidad de una gestión más flexible, escalable y accesible. Los departamentos de TI han pasado de estructuras jerárquicas a equipos multidisciplinarios, adoptando marcos como ITIL para estandarizar la entrega de servicios y mejorar la eficiencia. La tecnología no solo es una herramienta, sino un agente de cambio organizacional que reconfigura flujos de trabajo y culturas empresariales.
+            </p>
+
+            <h3 class="text-2xl mt-6">Reflexiones</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La complejidad de la gestión informática moderna radica en la intersección de lo técnico con lo organizacional. Es crucial entender que la implementación de nuevas tecnologías no es solo un reto técnico, sino también un desafío de gestión del cambio cultural y estructural dentro de la empresa. La adaptabilidad y la capacidad de integrar soluciones tecnológicas con la estrategia de negocio son habilidades esenciales para cualquier gerente de TI. La agilidad en el desarrollo de software y la atención a la experiencia del usuario son vitales para responder a las demandas del mercado.
+            </p>
+
+            <h3 class="text-2xl mt-6">Conclusiones</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La gerencia de la informática es un rol dinámico que exige una combinación de visión estratégica, habilidades técnicas y de liderazgo. La alineación entre TI y los objetivos de negocio es indispensable para generar valor y ventaja competitiva. El futuro demanda una constante adaptación a tecnologías emergentes como la IA y la ciberseguridad, y una gestión proactiva de los riesgos asociados. Una gerencia efectiva es aquella que logra integrar la evolución tecnológica con los principios administrativos para potenciar el éxito organizacional.
+            </p>
+
+            <div class="section-divider mt-8"></div>
+
+            <h3 class="text-2xl mt-6">Archivos de la Unidad 2</h3>
+            <div class="flex flex-wrap gap-4 mt-4">
+                <a href="/uploaded/gerencia-2.4.pptx" target="_blank" class="file-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    Presentación: Gerencia de la Informática (gerencia-2.4.pptx)
+                </a>
+                <a href="/uploaded/Ensayo sobre Gerencia de la Informática.pdf" target="_blank" class="file-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    Ensayo: La Evolución y Gerencia Estratégica del Área Informática (Ensayo sobre Gerencia de la Informática.pdf)
+                </a>
+            </div>
+
+            <h3 class="text-2xl mt-6">Bibliografía Específica de la Unidad 2</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Alonso, G. (2005). Gestión de servicios de tecnologías de información. Pearson Educación.</li>
+                <li>Etkin, J. (2005). Gestión de la complejidad en las organizaciones. Ediciones Granica.</li>
+                <li>Fayol, H. (1983). Administración industrial y general. Ediciones Orbis. (Obra original publicada en 1916).</li>
+                <li>Horovitz, J. (1990). La calidad del servicio: En busca de la excelencia. McGraw-Hill.</li>
+                <li>Information Technology Infrastructure Library (ITIL). (2019). ITIL Foundation: ITIL 4 Edition. AXELOS.</li>
+                <li>Juran, J. M. (1990). Juran y el liderazgo para la calidad: Un manual para directivos. Díaz de Santos.</li>
+                <li>Kendall, K. E. (2005). Análisis y diseño de sistemas (6ta ed.). Pearson Educación.</li>
+                <li>Kendall, K. E., & Kendall, J. P. (1991). Análisis y diseño estructurado de sistemas. Prentice-Hall Hispanoamericana.</li>
+                <li>Laudon, K. C. (2004). Sistemas de información gerencial: Administración de la empresa digital. Pearson Educación.</li>
+                <li>Lewin, K., & Kelly, H. H. (1990). Resolución de conflictos intergrupales. Paidós.</li>
+            </ul>
+        </section>
+
+        <!-- Unidad 3 Section -->
+        <section id="unidad3" class="card unit-section">
+            <h2 class="text-3xl font-bold">Unidad 3: Gerencia del Área de Equipos y Tecnología: Pilar del Éxito Organizacional</h2>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Esta unidad profundizó en la gerencia del área de tecnología y equipos como un componente crítico para el éxito organizacional. Se exploraron los pilares de una gestión tecnológica exitosa, el impacto estratégico, la infraestructura clave y las mejores prácticas para asegurar la integridad y disponibilidad de los sistemas.
+            </p>
+
+            <h3 class="text-2xl mt-6">Resumen Breve</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La gerencia del área de tecnología y equipos supervisa y optimiza los recursos tecnológicos, impactando directamente la competitividad y la innovación. Se basa en pilares como la eficiencia (maximizar el uso de recursos), la efectividad (alineación con objetivos de negocio) y la flexibilidad (adaptación a cambios tecnológicos). Su impacto estratégico incluye la ventaja competitiva, la optimización de procesos y una sólida gestión de riesgos. Los sistemas operativos y las aplicaciones empresariales son el corazón de la infraestructura, mientras que las redes y comunicaciones son la columna vertebral para el intercambio de información. La administración de recursos de TI establece controles para la integridad y disponibilidad de sistemas, utilizando marcos como ITIL y COBIT.
+            </p>
+
+            <h3 class="text-2xl mt-6">Reflexiones</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La gestión tecnológica va más allá de la simple administración de hardware y software; es una función estratégica que garantiza la resiliencia y el crecimiento de una organización. La interconexión de sistemas operativos, aplicaciones, redes y la ciberseguridad demanda un enfoque holístico. Es evidente que sin una administración rigurosa y un monitoreo constante, la infraestructura tecnológica se vuelve vulnerable y menos eficiente. La comprensión de estos componentes y la implementación de mejores prácticas son esenciales para mantener la operatividad y la seguridad en un entorno digital cada vez más complejo.
+            </p>
+
+            <h3 class="text-2xl mt-6">Conclusiones</h3>
+            <p class="text-gray-700 leading-relaxed">
+                La gerencia del área de tecnología y equipos es fundamental para cualquier organización moderna. Su rol abarca desde la selección y optimización de sistemas operativos y aplicaciones hasta el diseño de redes de comunicación robustas y la implementación de estrictos controles de seguridad. Una gestión eficiente no solo mejora la productividad y reduce costos, sino que también fomenta la innovación y asegura la continuidad del negocio frente a los desafíos tecnológicos. La capacidad de integrar todos estos componentes de manera coherente es la clave para el éxito en la era digital.
+            </p>
+
+            <div class="section-divider mt-8"></div>
+
+            <h3 class="text-2xl mt-6">Archivos de la Unidad 3</h3>
+            <div class="flex flex-wrap gap-4 mt-4">
+                <a href="/uploaded/Gerencia del \u00C1rea de Equipos y Tecnolog\u00EDa_ Pilar del \u00C9xito Organizacional.pdf" target="_blank" class="file-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    Presentación: Gerencia del Área de Equipos y Tecnología (Gerencia del Área de Equipos y Tecnología_ Pilar del Éxito Organizacional.pdf)
+                </a>
+                <a href="/uploaded/GERENCIA UNIDAD 5_Ensayo.pdf" target="_blank" class="file-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    Ensayo: La Gerencia del área de tecnología y equipos (GERENCIA UNIDAD 5_Ensayo.pdf)
+                </a>
+            </div>
+
+            <h3 class="text-2xl mt-6">Bibliografía Específica de la Unidad 3</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Forouzan, B. A. (2010). Data communications and networking. McGraw-Hill.</li>
+                <li>Gupta, S., & Prakash, A. (2018). Digital transformation: An Indian perspective. Springer.</li>
+                <li>Limoncelli, T. A., Hogan, C., & Chalup, S. (2017). The practice of cloud system administration: Designing and operating large distributed systems. Addison-Wesley Professional.</li>
+                <li>O'Brien, J. A., & Marakas, G. M. (2009). Management information systems. McGraw-Hill Irwin.</li>
+                <li>Schonberger, R. J. (1986). World class manufacturing: The lessons of simplicity applied. Free Press.</li>
+                <li>Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). Operating system concepts. Wiley.</li>
+                <li>Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer networks. Pearson Education.</li>
+                <li>Otros documentos internos y recursos del curso.</li>
+            </ul>
+        </section>
+
+        <!-- General Bibliography Section -->
+        <section id="bibliografia-general" class="card">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Bibliografía General Utilizada en el Portafolio</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Alonso, G. (2005). Gestión de servicios de tecnologías de información. Pearson Educación.</li>
+                <li>Burgelman, R. A., Christensen, C. M., & Wheelwright, S. C. (2009). Strategic management of technology and innovation. McGraw-Hill Irwin.</li>
+                <li>Chiavenato, I. (2002). Administración de recursos humanos. McGraw-Hill.</li>
+                <li>Computer History Museum. (2021). The Personal Computer Revolution. Recuperado de https://computerhistory.org</li>
+                <li>Etkin, J. (2005). Gestión de la complejidad en las organizaciones. Ediciones Granica.</li>
+                <li>Fayol, H. (1983). Administración industrial y general. Ediciones Orbis. (Obra original publicada en 1916).</li>
+                <li>Forouzan, B. A. (2010). Data communications and networking. McGraw-Hill.</li>
+                <li>Gupta, S., & Prakash, A. (2018). Digital transformation: An Indian perspective. Springer.</li>
+                <li>Hawryszkiewycz, I. T. (1991). Introduction to systems analysis and design. Prentice Hall.</li>
+                <li>Horovitz, J. (1990). La calidad del servicio: A la conquista del cliente. McGraw-Hill.</li>
+                <li>IBM. (s.f.). IBM 305 RAMAC. Recuperado de https://www.ibm.com</li>
+                <li>Information Technology Infrastructure Library (ITIL). (2019). ITIL Foundation: ITIL 4 Edition. AXELOS.</li>
+                <li>Juran, J. M. (1990). Juran on quality planning. Free Press.</li>
+                <li>Kendall, K. E. (2005). Análisis y diseño de sistemas (6ta ed.). Pearson Educación.</li>
+                <li>Kendall, K. E., & Kendall, J. E. (1991). Análisis y diseño de sistemas. Prentice-Hall Hispanoamericana.</li>
+                <li>Laudon, K. C. (2004). Sistemas de información gerencial: Administración de la empresa digital. Pearson Educación.</li>
+                <li>Lewin, K., & Kelly, D. (1990). Resolving social conflicts and field theory in social science. American Psychological Association.</li>
+                <li>Limoncelli, T. A., Hogan, C., & Chalup, S. (2017). The practice of cloud system administration: Designing and operating large distributed systems. Addison-Wesley Professional.</li>
+                <li>Llorens, F. (2005). Gestión de proyectos informáticos. McGraw-Hill.</li>
+                <li>Meyer, M. H. (1990). Managing technology in a competitive environment. Free Press.</li>
+                <li>O'Brien, J. A., & Marakas, G. M. (2009). Management information systems. McGraw-Hill Irwin.</li>
+                <li>Pearlson, K. E., Saunders, C. S., & Galletta, D. F. (2019). Managing and using information systems: A strategic approach (7th ed.). Wiley.</li>
+                <li>SAP. (2020). Historia de SAP R/3. Recuperado de https://www.sap.com</li>
+                <li>Schonberger, R. J. (1986). World class manufacturing: The lessons of simplicity applied. Free Press.</li>
+                <li>Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). Operating system concepts. Wiley.</li>
+                <li>Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer networks. Pearson Education.</li>
+                <li>Taylor, F. W. (1994). Principios de la administración científica. Ediciones Orbis. (Obra original publicada en 1911).</li>
+                <li>Udaondo, M. (1991). Sistemas de información para la gestión. Pirámide.</li>
+            </ul>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>&copy; 2025 Manuel Hernández. Todos los derechos reservados.</p>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Ir arriba">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+        </button>
+    </div>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scroll
+            });
+        }
+    </script>
+</body>
+</html>
